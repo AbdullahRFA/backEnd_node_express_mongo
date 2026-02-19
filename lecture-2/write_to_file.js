@@ -11,7 +11,7 @@ fs.writeFile("Output.txt","Abdullah is the best",(err)=>{
   }
 })
 
-fs.readFile("Output.txt","utf8",(err,data)=>{
+fs.readFile("Output.txt","utf-8",(err,data)=>{
   if(err){
     console.log("Error Occured")
   }
