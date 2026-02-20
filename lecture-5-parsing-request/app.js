@@ -1,0 +1,9 @@
+const http = require("http");
+const requestHandler = require("./parsing");
+
+const server = http.createServer(requestHandler);
+const port = 3001;
+
+server.listen(port, () => {
+  console.log(`Server is listening at http://localhost:${port}`);
+});
