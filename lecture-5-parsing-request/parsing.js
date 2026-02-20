@@ -1,4 +1,5 @@
 const http = require("http");
+const fs = require("fs");
 
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
@@ -31,6 +32,7 @@ const server = http.createServer((req, res) => {
     const bodyObject = Object.fromEntries(params.entries());
 
     console.log("Parsed form data:", bodyObject);
+    fs.writeFileSync("form-data.json", JSON.stringify(bodyObject, null, 2));
 
     res.setHeader("Content-Type", "text/html");
     res.write(`<h1>Form submitted successfully</h1>`);
