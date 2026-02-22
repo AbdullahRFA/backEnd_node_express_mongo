@@ -7,15 +7,23 @@ const express = require("express");
 
 const app = express();
 
-app.use(
+app.get("/",
     (req,res,next)=>{
         console.log("This is a first middleware function");
+        console.log(req.method);
+        // next();
+        // res.send("<h1>Congratulations from Express server</h1>")
+    }
+)
+app.use("/",
+    (req,res,next)=>{
+        console.log("This is a another middleware function");
         console.log(req.method);
         next();
         // res.send("<h1>Congratulations from Express server</h1>")
     }
 )
-app.use(
+app.use("/second",
     (req,res,next)=>{
         console.log("This is a second middleware function");
         console.log(req.url);
