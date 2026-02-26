@@ -24,6 +24,14 @@ app.use(hostRouter);
 
 app.use(hostRouter);
 
+app.use((req, res, next) => {
+  
+    res.status(404).send(`
+        <h1>Page Not Found</h1>
+        <a href="/">Go Home</a>
+        `); 
+});
+
 
 
 const post = 3000;
