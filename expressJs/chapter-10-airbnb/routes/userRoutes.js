@@ -1,15 +1,19 @@
+//Core Modules
+
+const path = require("path");
+
+//External Modules
 const express = require("express");
 
 const userRoutes =express.Router();
 
+const rootDir = require("../utils/pathUtils");
+
+
 
 userRoutes.get("/", (req, res, next) => {
 
-  res.send(`
-        <h1>Welcome to AirBnB</h1>
-        <a href="/host/add-home">Add Home</a>
-        `);
-//   next();
+  res.sendFile(path.join(rootDir, "./views/home.html"));
 });
 
 userRoutes.use((req, res, next) => {
