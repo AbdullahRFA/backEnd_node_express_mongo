@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -52,9 +53,14 @@ app.get("/contact-us",(req,res,next)=>{
     )
 })
 
+app.use(bodyParser.urlencoded())
+
 app.post("/contact-us",(req,res,next)=>{
     console.log("Handling POST request for /contact-us");
     console.log(req.method);
+    console.log(req.body);
+    console.log("Usrname:", req.body.username);
+    console.log("Email:", req.body.email);
     res.send(`
         <h1>Thank you for submitting your contact information</h1>
         `)
