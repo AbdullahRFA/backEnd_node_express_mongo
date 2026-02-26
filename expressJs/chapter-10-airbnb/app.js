@@ -10,8 +10,13 @@ const userRoutes = require("./routes/userRoutes");
 const hostRouter = require("./routes/hostRouter");
 const rootDir = require("./utils/pathUtils");
 
-
 const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', 'views'); // tells express where your templates are located. By default, it looks for a folder named "views" in the root directory of your project. If your templates are in a different folder, you can specify the path here.
+
+
+
 
 app.use( userRoutes);
 
