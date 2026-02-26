@@ -6,23 +6,17 @@ const express = require("express");
 const userRoutes = require("./routes/userRoutes");
 const hostRouter = require("./routes/hostRouter");
 
-// const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(userRoutes);
+app.use( userRoutes);
 
 app.use(express.urlencoded({extended:true}) );
 
-
-app.use(userRoutes);
-
-app.use(hostRouter);
+app.use("/host", hostRouter);
 
 
-// app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(hostRouter);
 
 app.use((req, res, next) => {
   
