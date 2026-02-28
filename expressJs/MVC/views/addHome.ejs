@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Home</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <!-- FORM CARD -->
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+
+    <!-- HEADER -->
+    <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">
+      🏡 Register Your Home
+    </h1>
+
+    <!-- FORM -->
+    <form action="/add-home" method="POST" class="space-y-5">
+
+      <!-- User NAME -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">
+        Name
+        </label>
+        <input
+          type="text"
+          name="userName"
+          placeholder="Enter your name"
+          required
+          class="w-full border border-gray-300 rounded-lg px-4 py-2
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <!-- HOME NAME -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">
+          Home Name
+        </label>
+        <input
+          type="text"
+          name="homeName"
+          placeholder="Enter your home name"
+          required
+          class="w-full border border-gray-300 rounded-lg px-4 py-2
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- ADDRESS -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">
+          Address
+        </label>
+        <input
+          type="text"
+          name="homeAddress"
+          placeholder="Enter your home address"
+          required
+          class="w-full border border-gray-300 rounded-lg px-4 py-2
+                 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- EXTRA FIELDS (Recommended) -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">
+          Price
+        </label>
+        <input
+          type="number"
+          name="price"
+          placeholder="Enter price"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2
+                 focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">
+          Location
+        </label>
+        <input
+          type="text"
+          name="location"
+          placeholder="City / Area"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2
+                 focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <!-- SUBMIT BUTTON -->
+      <button
+        type="submit"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white
+               font-semibold py-2 rounded-lg transition duration-200"
+      >
+        ➕ Add Home
+      </button>
+
+    </form>
+
+    <!-- BACK LINK -->
+    <div class="text-center mt-4">
+      <a href="/" class="text-blue-500 hover:underline">
+        ⬅ Back to Home
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

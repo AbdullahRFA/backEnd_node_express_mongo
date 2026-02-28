@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Added Successfully</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-2xl">
+
+    <% if(home && home.length > 0) { %>
+
+      <!-- SUCCESS HEADER -->
+      <div class="text-center mb-6">
+        <div class="text-green-500 text-5xl mb-2">✅</div>
+        <h1 class="text-3xl font-bold text-green-600">
+          Home Added Successfully!
+        </h1>
+        <p class="text-gray-500 mt-2">
+          Your home has been registered.
+        </p>
+      </div>
+
+
+      <!-- HOME LIST -->
+     <div class="space-y-4">
+
+        <% home.forEach(h => { %>
+
+          <div class="border rounded-xl p-5 bg-gray-50 shadow-sm">
+
+            <h2 class="text-xl font-bold text-blue-600 mb-2">
+              🏡 <%= h.homeName %>
+            </h2>
+
+            <p class="text-gray-700">
+              <span class="font-semibold">Owner:</span>
+              <%= h.userName %>
+            </p>
+
+            <p class="text-gray-700">
+              <span class="font-semibold">Address:</span>
+              <%= h.homeAddress %>
+            </p>
+
+            <p class="text-gray-700">
+              <span class="font-semibold">Price:</span>
+              $<%= h.homePrice %>
+            </p>
+
+            <p class="text-gray-700">
+              <span class="font-semibold">Location:</span>
+              <%= h.homeLocation %>
+            </p>
+
+          </div>
+
+        <% }); %>
+
+      </div>
+
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex justify-center gap-4 mt-8">
+
+        <a href="/"
+           class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg shadow">
+          🏠 Go to Home
+        </a>
+
+        <a href="/add-home"
+           class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg shadow">
+          ➕ Add Another Home
+        </a>
+
+      </div>
+
+    <% } else { %>
+
+      <!-- EMPTY STATE -->
+      <div class="text-center">
+
+        <div class="text-6xl mb-4">📭</div>
+
+        <h1 class="text-3xl font-bold text-gray-700 mb-2">
+          No homes added yet
+        </h1>
+
+        <p class="text-gray-500 mb-6">
+          Start by adding your first home.
+        </p>
+
+        <a href="/add-home"
+           class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow">
+          ➕ Add Home
+        </a>
+
+      </div>
+
+    <% } %>
+
+  </div>
+
+</body>
+</html>
